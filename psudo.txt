@@ -1,0 +1,9 @@
+user input height and width
+5 5
+==========
+=        =
+=        =
+=        =
+=        =
+==========
+
