@@ -56,8 +56,8 @@ void testCanvasInit() {
  * @author TahsinAyman
  */
 void testCanvasLegacyCodebase() {
-  int height = 5;
-  int width = 10;
+  int height = 25;
+  int width = 40;
   Canvas *canvas = new Canvas(height, width);
   canvas->construct();
   char **complete = canvas->getCanvas();
@@ -70,6 +70,8 @@ void testCanvasLegacyCodebase() {
 }
 
 /*
+ * @important
+ * @ignore
  * This Program runs on:
  * O(nm) where n = height and m = width
  *
