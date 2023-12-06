@@ -25,5 +25,8 @@ If you find any issue with this project then create issue with `bug` label and p
 
 If you thinkg `x`, `y`, `z` etc feature should be added then create a issue with `enhancement` or open a discussion about it.
 
+## Don't understand lables
+See the label [documentation](./labels.md) to understand what the label means. 
+
 ## Thank you.
 
