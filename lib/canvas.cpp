@@ -12,7 +12,7 @@ class Canvas {
     int width;
     int tempSnakeStartPositionX;
     int tempSnakeStartPositionY;
-    char **canvas;
+    char **canvas; // thanks to @AsadunnobieIshaan ^_^
 
   public:
     ~Canvas() {
