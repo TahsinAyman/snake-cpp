@@ -28,5 +28,9 @@ If you thinkg `x`, `y`, `z` etc feature should be added then create a issue with
 ## Don't understand lables
 See the label [documentation](./labels.md) to understand what the label means. 
 
+## Diagram
+
+![Diagram](./docs/Classes Sequence And Responsibility.png)
+
 ## Thank you.
 

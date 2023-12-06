@@ -72,7 +72,8 @@ class Canvas {
           }
         }
       }
-      this->canvas[tempSnakeStartPositionY][tempSnakeStartPositionX] = this->snakeBodyCharacter;
+      // @deprecated
+      // this->canvas[tempSnakeStartPositionY][tempSnakeStartPositionX] = this->snakeBodyCharacter;
     }
     /*
     * Getters for the canvas.
