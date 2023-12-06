@@ -30,7 +30,7 @@ See the label [documentation](./labels.md) to understand what the label means.
 
 ## Diagram
 
-![Diagram](./docs/Classes Sequence And Responsibility.png)
+![Diagram](./docs/classes-sequence-diagram.png)
 
 ## Thank you.
 
