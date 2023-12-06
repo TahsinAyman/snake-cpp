@@ -12,7 +12,7 @@ class Canvas {
     int width;
     int tempSnakeStartPositionX;
     int tempSnakeStartPositionY;
-    char **canvas; // thanks to @AsadunnobieIshaan ^_^
+    char **canvas; // @credit AsadunnobieIshaan 
 
   public:
     ~Canvas() {
@@ -20,6 +20,7 @@ class Canvas {
         delete[] this->canvas[i];
       }
       delete[] this->canvas;
+      cout << "The memory was free" << endl;
     }
     Canvas(int height, int width) 
       : snakeBodyCharacter('0'),
@@ -30,6 +31,7 @@ class Canvas {
       this->tempSnakeStartPositionX = width / 2;
       this->tempSnakeStartPositionY = height / 2;
     }
+
     /*
      * TODO: Implement Blank Constructor Logic Later.
      *
@@ -39,13 +41,21 @@ class Canvas {
     //Canvas() {}
   
     /*
-     * NOTE: Make sure to use OS stream here. 
+     * NOTE: Make sure to use OS stream here. @credit AsadunnobieIshaan
      * TODO: Write Logic @TahsinAyman
      * @author TahsinAyman
      */ 
     void print() {
       
     }
+    /*
+     * This is where the canvas is created with 
+     * @var wallCharacter, tempSnakeStartPositionX, tempSnakeStartPositionY, canvas, width, height
+     *
+     * This program runs on @O(nm) where n = @var height and m = @var width
+     *
+     * @author TahsinAyman
+     */
     void construct() {
       cout << this->tempSnakeStartPositionX << " " << this->tempSnakeStartPositionY << endl;
       this->canvas = new char*[this->height];
@@ -64,8 +74,20 @@ class Canvas {
       }
       this->canvas[tempSnakeStartPositionY][tempSnakeStartPositionX] = this->snakeBodyCharacter;
     }
+    /*
+    * Getters for the canvas.
+    *
+    * @important
+    * @author TahsinAyman
+    */
     char **getCanvas() {
       return this->canvas;
     }
-    
-};
+    int getHeight() {
+      return this->height;
+    }
+    int getWidth() {
+      return this->width;
+    }
+  
+  };
