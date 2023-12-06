@@ -26,22 +26,23 @@ class Canvas {
     }
     void construct() {
       this->canvas = new char*[this->height];
-      for (int w = 0; w < width; w++) {
-        this->canvas[0] = new char[width];
-        this->canvas[0][w] = '=';
-        this->canvas[height - 1][w] = '=';
-      }
-      for (int h = 1; h < height - 1; h++) {
-        this->canvas[h] = new char[width];
-        this->canvas[h][0] = '=';
-        for (int w = 1; w < width - 1; w++) {
-          this->canvas[h][w] = ' ';
+      for (int r = 0; r < this->height; r++) {
+        this->canvas[r] = new char[this->width];
+        for (int c = 0; c < this->width; c++) {
+          if (
+            (r == 0 || r == this->height - 1) || 
+            (c == 0 || c == this->width - 1)
+          ) {
+            this->canvas[r][c] = '*';
+          } else {
+            this->canvas[r][c] = ' ';
+          }
         }
-        this->canvas[h][width - 1] = '=';
       }
-      this->canvas = canvas;
+
     }
     char **getCanvas() {
       return this->canvas;
-    }  
+    }
+    
 };
