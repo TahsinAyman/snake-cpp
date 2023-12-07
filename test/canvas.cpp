@@ -75,6 +75,7 @@ void testCanvasLegacyCodebase() {
  * This Program runs on:
  * O(nm) where n = height and m = width
  *
+ * @credit rashedkarim
  * @author TahsinAyman
  */
 void testStarBox() {

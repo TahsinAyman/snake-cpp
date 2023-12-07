@@ -15,6 +15,7 @@ class Canvas {
     char **canvas; // @credit AsadunnobieIshaan 
 
   public:
+    /*
     ~Canvas() {
       for (int i = 0; i < height; i++) {
         delete[] this->canvas[i];
@@ -22,6 +23,7 @@ class Canvas {
       delete[] this->canvas;
       cout << "The memory was free" << endl;
     }
+    */
     Canvas(int height, int width) 
       : snakeBodyCharacter('0'),
         wallCharacter('*') 
@@ -46,7 +48,12 @@ class Canvas {
      * @author TahsinAyman
      */ 
     void print() {
-      
+      for (int row = 0; row < height; row++) {
+        for (int col = 0; col < width; col++) {
+          cout << this->canvas[row][col];
+        } 
+        cout << endl;
+      }
     }
     /*
      * This is where the canvas is created with 
@@ -57,7 +64,6 @@ class Canvas {
      * @author TahsinAyman
      */
     void construct() {
-      cout << this->tempSnakeStartPositionX << " " << this->tempSnakeStartPositionY << endl;
       this->canvas = new char*[this->height];
       for (int r = 0; r < this->height; r++) {
         this->canvas[r] = new char[this->width];
