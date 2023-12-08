@@ -1,5 +1,6 @@
 #include<iostream>
 #include "./canvas.cpp"
+#include "./snake.cpp"
 using namespace std;
 /*
 * Used Signle Responsibility Principle
@@ -12,10 +13,12 @@ class Game {
     int height;
     int width;
     Canvas *canvas; 
+    int score;
   public:
     Game(int height, int width) {
       this->height = height;
       this->width = width;
+      this->score = 0;
     }
     Game() {
       cout << "Enter the height: ";
@@ -28,8 +31,8 @@ class Game {
     }
     void construct() {
       Canvas *canvas = new Canvas(height, width);
-      this->canvas = canvas;
       canvas->construct();
-      
-    } 
+      Snake *snake = new Snake(canvas);
+      this->canvas = canvas;
+    }
 };

@@ -6,16 +6,17 @@ using namespace std;
 */
 class Canvas {
   private:
-    const char snakeBodyCharacter;
     const char wallCharacter;
     int height;
     int width;
-    int tempSnakeStartPositionX;
-    int tempSnakeStartPositionY;
     char **canvas; // @credit AsadunnobieIshaan 
 
   public:
     /*
+     * @important
+     * This is where the pointer clears the memory.
+     * @author TahsinAyman
+     */
     ~Canvas() {
       for (int i = 0; i < height; i++) {
         delete[] this->canvas[i];
@@ -23,15 +24,12 @@ class Canvas {
       delete[] this->canvas;
       cout << "The memory was free" << endl;
     }
-    */
+    
     Canvas(int height, int width) 
-      : snakeBodyCharacter('0'),
-        wallCharacter('*') 
+      : wallCharacter('*') 
     {
       this->height = height;
       this->width = width;
-      this->tempSnakeStartPositionX = width / 2;
-      this->tempSnakeStartPositionY = height / 2;
     }
 
     /*
@@ -50,14 +48,14 @@ class Canvas {
     void print() {
       for (int row = 0; row < height; row++) {
         for (int col = 0; col < width; col++) {
-          cout << this->canvas[row][col];
+          cout << this->canvas[row][col] << " ";
         } 
         cout << endl;
       }
     }
     /*
      * This is where the canvas is created with 
-     * @var wallCharacter, tempSnakeStartPositionX, tempSnakeStartPositionY, canvas, width, height
+     * @var wallCharacter, @deprecated tempSnakeStartPositionX, @deprecated tempSnakeStartPositionY, canvas, width, height
      *
      * This program runs on @O(nm) where n = @var height and m = @var width
      *
@@ -96,5 +94,15 @@ class Canvas {
     int getWidth() {
       return this->width;
     }
-  
+    char getWallCharacter() {
+      return this->wallCharacter;
+    }
+    /*
+     * Function to set a specific cordiantes a character.
+     * so the snake can move and eat.
+     * @author TahsinAyman
+     */
+    void setCordinates(int x, int y, char v) {
+      this->canvas[y][x] = v; 
+    }
   };
